@@ -1,0 +1,9 @@
+{
+    "image": "redis:3.0.4", 
+    "name": "redis", 
+    "ports": [
+        {
+            "containerPort": 6379
+        }
+    ]
+}
