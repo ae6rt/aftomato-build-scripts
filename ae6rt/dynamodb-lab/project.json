@@ -1,4 +1,5 @@
 {
+     "build-image": "ae6rt/decap-build-base:latest",
      "repo-manager": "github",
      "repo-url": "https://github.com/ae6rt/dynamodb-lab.git",
      "repo-description": "AWS DynamoDb lab"
