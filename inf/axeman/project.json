@@ -1,0 +1,6 @@
+{
+     "build-image": "ae6rt/java7:latest",
+     "repo-manager": "github",
+     "repo-url": "https://github.com/ae6rt/hello-world-java.git",
+     "repo-description": "Hello world in Java"
+}
