@@ -1,7 +1,7 @@
 {
-     "build-image": "ae6rt/java7:latest",
-     "managed-ref-regex": "master|develop|issue/.*",
-     "repo-manager": "github",
-     "repo-url": "https://github.com/ae6rt/hello-world-java.git",
-     "repo-description": "Hello world in Java"
+     "buildImage": "ae6rt/java7:latest",
+     "managedRefRegex": "master|develop|issue/.*",
+     "repoManager": "github",
+     "repoUrl": "https://github.com/ae6rt/hello-world-java.git",
+     "repoDescription": "Hello world in Java"
 }
