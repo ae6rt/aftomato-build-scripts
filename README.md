@@ -11,26 +11,38 @@ _library_ part is the repository shortname in Github.
 
 ### The build script
 
-In the _projectkey/library_ directory, there should be a build
-script named build.sh that contains the userland build logic.  This
-script is free form and can contain anything the underlying Docker
-build container supports.
+In the _projectkey/library_ directory, there should be a build script
+named build.sh that contains the userland build logic.  This script is
+free form and can contain anything the underlying build container
+supports at runtime.
 
 ### The project descriptor
 
 Also in the _project/key_ directory there is an optional project.json file
 that has the following sample structure:
 
+modelled by this type 
+
 ```
-{
-     "repo-manager": "github",
-     "repo-url": "https://github.com/ae6rt/dynamodb-lab.git",
-     "repo-description": "AWS DynamoDb lab"
+type ProjectDescriptor struct {
+	// Image is the container image the associated project should be built in.
+	Image string `json:"buildImage"`
+    
+	// RepoManager is the source code management system the project source is contained in.
+	RepoManager string `json:"repoManager"`
+    
+	// RepoURL is largely informational for the human managing this project.  It is currently unused by Decap.
+	RepoURL string `json:"repoUrl"`
+    
+	// RepoDescription is a human readable description of this project.
+	RepoDescription string `json:"repoDescription"`
+    
+	// ManagedRegexStr is a regular expression that defines which refs (branches and tags) is willing to build as a result of
+	// a post-commit hook.  Manual builds are not subject to this regex.
+	ManagedRefRegexStr string `json:"managedRefRegex"`
+    
+	// The formal regex derived from ManagedRefRegexStr above.
+	Regex *regexp.Regexp
 }
 ```
-
-The _repo-manager_ field is a hint to _Decap_ for which API to use
-when calling for repository branch detail.  The _repo-url_ is a
-pointer to the repository that build.sh referneces, and _repo-description_
-is a free form textual description for human consumption.
 
