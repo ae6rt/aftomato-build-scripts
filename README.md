@@ -18,10 +18,8 @@ supports at runtime.
 
 ### The project descriptor
 
-Also in the _project/key_ directory there is an optional project.json file
-that has the following sample structure:
-
-modelled by this type 
+Also in the _project/key_ directory there is an optional project.json
+file modelled by this type
 
 ```
 type ProjectDescriptor struct {
@@ -45,4 +43,6 @@ type ProjectDescriptor struct {
 	Regex *regexp.Regexp
 }
 ```
+
+project.json is metadata about the project.
 
