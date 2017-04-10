@@ -1,0 +1,7 @@
+{
+     "buildImage": "ae6rt/decap-build-base:latest",
+     "repoManager": "github",
+     "managedRefRegex": "master|develop|issue/.*",
+     "repoUrl": "https://github.com/ae6rt/decap-simple-project.git",
+     "repoDescription": "Simple demo project"
+}
